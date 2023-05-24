@@ -61,7 +61,12 @@ class Surat_model extends CI_Model {
         return $ret;
     }
      public function checkGetSum($id='') {
-
+        $user_data = $this->session->get_userdata();
+        $id_session = $user_data['user_id_company'];
+        if(!empty($id_session)){
+            $this->db->where('plant',$id_session);
+        }
+        
         $this->db->select('COUNT(menu_id) as jumlah', FALSE);         
         $this->db->where('menu_id',$id);
         $query = $this->db->get('mst_surat'); 

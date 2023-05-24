@@ -50,7 +50,7 @@ class Login extends MY_Controller {
         if (isset($_POST['submit'])) {
             $res = $this->checkLogin();
         }
-
+        
         $dt["alert"] = $res;
         $this->load->view("login/login", $dt);
     }
@@ -95,7 +95,6 @@ class Login extends MY_Controller {
                          "user_allowed_menu" => $arrMeta,
                         "user_validated" => true,
                     );
-                   echoPre($arrSession);exit;
                     $redirect_url = base_url()."home/";
                     $this->session->set_userdata($arrSession);
                     redirect($redirect_url);
