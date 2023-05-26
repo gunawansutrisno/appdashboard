@@ -104,7 +104,7 @@
                                         <option>--Tahun--</option>
                                         <?php
                                         $date = date('Y');
-                                        for ($i = 2017; $i <= $date; $i++) {
+                                        for ($i = date('Y'); $i >= date('Y') - 3; $i-=1){
                                             ?>
                                             <option value="<?= $i; ?>" <?= (isset($data->tahun)) ? $data->tahun == $i ? 'selected' : '' :'' ;?>><?= $i; ?></option>
 <?php } ?>

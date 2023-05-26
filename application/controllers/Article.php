@@ -63,8 +63,7 @@ class Article extends MY_Controller {
             $cek = $this->menu_model->check($urisegment);      
         }
        
-        if(empty($cek)){
-           
+        if(empty($cek)){           
             if(empty($urisegment)){
                 $cek = $this->article_model->checkD($name);
                 
